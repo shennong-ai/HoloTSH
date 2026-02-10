@@ -1,68 +1,9 @@
-# Markdown
+## ⚠️ 重要说明
+- 本代码为论文《HoloTSH: Bridging the Epistemological Gap in TCM via a Neuro-Symbolic Tensor Reasoning Kernel》的**实验复现与示意图代码**。
+- 实验基于**合成数据**，用于验证算法在极端稀疏条件下的鲁棒性，并非真实临床诊断系统。
+- 代码中的 HoloTSH 实现为**简化版本**，实际论文中的方法包含更复杂的张量分解、超图注意力等模块。
+- 本仓库旨在促进可复现研究，不直接用于临床诊断。
 
-# 
-
-# 
-
-# \# HoloTSH: Synthetic Validation Experiment
-
-# 
-
-# This repository contains the simulation code for the paper:
-
-# \*\*"HoloTSH: A Neuro-Symbolic Tensor Logic for TCM Modernization via Mathematical Isomorphism and Theoretical Guarantees"\*\*
-
-# \*Submitted to IEEE Journal of Biomedical and Health Informatics (JBHI)\*.
-
-# 
-
-# \## 🧪 Experiment Description
-
-# This code performs a Monte Carlo simulation (n=50 runs) to validate the \*\*HoloTSH Dual-Stream Architecture\*\*. It compares HoloTSH against standard HoRPCA under a \*\*70% missing data rate\*\* (simulating the "Data Wall" in TCM).
-
-# 
-
-# \### Key Metrics Verified:
-
-# 1\. \*\*Mitigation of Shrinkage Bias:\*\* Validating Lemma 1 by measuring the recovery error of weak chronic pathological signals.
-
-# 2\. \*\*Statistical Significance:\*\* T-test results comparing reconstruction errors.
-
-# 
-
-# \## 🚀 How to Run
-
-# 
-
-# 1\. \*\*Install Dependencies:\*\*
-
-# &nbsp;  ```bash
-
-# &nbsp;  pip install -r requirements.txt
-
-# 
-
-# 2.Run Simulation:
-
-# Bash
-
-# python holotsh\_final\_simulation.py
-
-# 
-
-# 📊 Results
-
-# The simulation generates the following performance comparison:
-
-# Metric	HoRPCA (Baseline)	HoloTSH (Ours)	Improvement
-
-# Chronic Pathology RRE	~14.635	~1.594	~10x Reduction
-
-# Anomaly Detection F1	~0.161	~0.163	Comparable
-
-# Note: Results are generated dynamically and may vary slightly due to random seeds, though the seed is fixed to 2026 for reproducibility.
-
-# 🔗 Citation
-
-# If you use this code, please cite our IEEE JBHI paper (Citation details to be added upon publication).
-
+## 📊 结果解释
+- 所有结果均在合成数据上生成，用于展示方法在“数据沙漠”场景下的潜力。
+- 与 LSTM 的对比旨在说明“先验知识”在稀疏数据下的优势，并非否定深度学习的普遍价值。
