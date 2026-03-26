@@ -1,0 +1,25 @@
+HoloTSH & HoloAuditor Academic Public License
+
+Copyright (c) 2026 Tak Ho Alex Li, Michael K. Ng, and contributors.
+All rights reserved.
+
+This software, including its associated geometric algorithms, signature databases, and documentation files (the "Software"), is provided strictly for ACADEMIC, RESEARCH, and NON-COMMERCIAL OPEN-SOURCE purposes only.
+
+1. ACADEMIC & NON-COMMERCIAL USE
+You are permitted to use, copy, modify, and distribute the Software solely for academic research and non-commercial open-source projects, provided that:
+(a) The original copyright notice and this permission notice appear in all copies or substantial portions of the Software.
+(b) Any modifications are explicitly marked as altered from the original.
+
+2. COMMERCIAL USE STRICTLY PROHIBITED
+"Commercial Use" of this Software is strictly forbidden without prior written consent from the copyright holders. Commercial Use includes, but is not limited to:
+(a) Integrating the Software or its topological signatures into a commercial product or proprietary medical system.
+(b) Deploying the Software as a paid service, SaaS, or API.
+(c) Using the Software for internal business operations within a for-profit entity (e.g., corporate hospitals, medical AI companies).
+
+3. SIGNATURE & WATERMARK ACKNOWLEDGEMENT
+The Software contains embedded topological signatures and semantic verification logic. Any unauthorized removal or bypassing of these integrity checks for commercial distribution constitutes a direct violation of this license.
+
+For commercial licensing opportunities, enterprise deployment (e.g., HoloAuditor / HoloBlocker frameworks), or API access, please contact the lead author at:
+Email: alexlihk@hotmail.com
+
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.

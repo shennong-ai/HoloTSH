@@ -179,3 +179,23 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# =========================
+# HoloTSH Custom Ignores
+# =========================
+
+# 1. Ignore LaTeX build junk (過濾掉論文編譯產生的垃圾檔，只留 .tex 和 .bib)
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# 2. Ignore Raw Data & Generated Matrices (絕對保護數據主權，防止不小心上傳)
+data/
+*.npz
+*.csv
+*.json
