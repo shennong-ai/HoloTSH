@@ -1,0 +1,24 @@
+# ==========================================================
+# HoloTSH NMI Reproducibility Environment Dependencies
+# ==========================================================
+
+# Core LLM API
+zhipuai>=2.1.5
+
+# Mathematics & Topological Graph Processing
+numpy>=1.24.0
+scipy>=1.10.0
+networkx>=3.0
+
+# Data Processing & File I/O
+pandas>=2.0.0
+openpyxl>=3.1.0      # Required for reading SymMap .xlsx files
+scikit-learn>=1.2.0  # Required for Tensor CountVectorizer
+
+# Dataset Downloading & Web Requests
+requests>=2.31.0
+gdown>=5.1.0         # For Google Drive SFT data extraction
+datasets>=2.18.0     # HuggingFace Hub for ShenNong_TCM_Dataset
+
+# Optional: Visualization (if needed for output logs)
+matplotlib>=3.7.0
