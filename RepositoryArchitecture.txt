@@ -1,28 +1,22 @@
 HoloTSH-Ecosystem/
-├── NMI_Reproducibility/           # 1. 專供 Nature Machine Intelligence 審稿人一鍵複現
-│   ├── OneButtonFire.py           # 核心腳本：複現 0.82ms 時延與 97.66% 恢復率
-│   ├── requirements_nmi.txt       # NMI 複現專屬依賴包
-│   └── data_downloader.py         # 合法抓取開源數據集 (SylvanL) 的自動腳本
+├── README.md                      # (已淨化的 Markdown，包含徽章與版權警告)
 │
-├── HoloAuditor/                   # 2. 醫療大模型安全審計與殺毒引擎
+├── NMI_Reproducibility/           # 1. 專供 Nature Machine Intelligence 審稿人一鍵複現
+│   ├── GithubHoloTSH.ipynb        # 👑 核心腳本：一鍵順序運行，包含 4597提取、1437過濾、97.66%掩碼與 0.82ms時延
+│   ├── requirements_nmi.txt       # NMI 複現專屬依賴包 (zhipuai, networkx, pandas, scipy 等)
+│   └── data_downloader.py         # 合法抓取開源數據集 (SylvanL / ShenNong) 的自動腳本
+│
+├── HoloAuditor/                   # 2. 醫療大模型安全審計與殺毒引擎 (應用層)
 │   ├── engine/                    # 核心 V6.6 引擎
 │   │   ├── tensor_btd.py          # BTD 張量分解模塊
 │   │   ├── manifold_filter.py     # Laplacian 流形過濾器
-│   │   └── semantic_validator.py  # 邊界條件與完整性監控
+│   │   └── forensic_auditor.py    # 🚨 司法級水印檢測器 (包含抓取盜用者的白盒/黑盒驗證腳本)
 │   ├── signatures/                # 動態更新的醫學簽名/病毒庫
-│   │   ├── v1.0_symmap_base.json  # 官方 V1.0 基礎映射庫 (15% 基準能力)
+│   │   ├── v1.0_symmap_base.json  # 官方 V1.0 基礎映射庫 (包含「中指痛->少陽不和」溯源錨點)
 │   │   └── v1.1_community.json    # 接受 GitHub PR 的社區更新庫
 │   ├── README.md                  # HoloAuditor 專屬說明
 │   └── CONTRIBUTING.md            # 規範醫學專家如何上傳 Signature 的指南
 │
-├── HoloBlocker/                   # 3. 具身智能 (Embodied AI) 安全中斷器
-│   ├── core_interceptor.py        # 物理設備 (如無人機/醫療機械臂) 的拓撲熔斷邏輯
-│   └── simulation_env/            # 仿真測試環境
-│
-├── core/                          # 三大模塊共用的底層數學庫
-│   ├── geometric_math.py          # 幾何數學基礎函數
-│   └── laplacian_isomorphism.py   # 核心譜圖同構算法 (包含浮點)
-│
-├── .gitignore                     # 過濾本地緩存與隱私數據 (含 LaTeX 編譯垃圾)
-├── LICENSE                        # 強制：HoloTSH & HoloAuditor 自定義學術開源協議
-└── README.md                      # 總倉庫門面介紹
+└── HoloBlocker/                   # 3. 具身智能 (Embodied AI) 物理斷路器前瞻
+    ├── README.md                  # SSRN 預印本 (ID: 6421619) 概念說明
+    └── hardware_interface_mock/   # (概念驗證) 拓撲中斷器與物理設備的接口定義
