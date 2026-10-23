@@ -43,3 +43,7 @@ For **Commercial Licensing**, enterprise deployment (e.g., HoloAuditor / HoloBlo
 
 ---
 *Copyright (c) 2026 Tak Ho Alex Li, Michael K. Ng, et al. All rights reserved.*
+
+## Benchmark Protocol v2(2026-10-23)
+
+NMI_Reproducibility 中的 LLM 对比实验已按 v2 协议重建(见 GithubHoloTSHr4.ipynb)。v1(r3)的评分存在三处缺陷(甘草默认回退、审计命中恒为 1、单字符子串匹配),其对比结果作废。v2 结果:Base 0.20 → Audit 0.60/0.40(机制:证型归位+变体归一);证型 0.40;herb-recall 0.53;全部数字可离线复算,逐题日志内嵌。
