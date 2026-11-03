@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8">
+<title>TCM-FormulaBench · 中醫方劑層公共基準</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;margin:0;padding:20px;background:#0d1117;color:#c9d1d9}
+h1{color:#58a6ff;font-size:24px;border-bottom:1px solid #30363d;padding-bottom:10px}
+h2{color:#79c0ff;font-size:18px;margin-top:28px}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:14px}
+th{background:#161b22;color:#8b949e;padding:8px 12px;text-align:left;border:1px solid #30363d}
+td{padding:8px 12px;border:1px solid #30363d}
+tr:hover{background:#161b22}
+.best{color:#3fb950;font-weight:bold}
+.card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;margin:12px 0}
+.metric{display:inline-block;margin:4px 8px;text-align:center}
+.metric .val{font-size:28px;color:#58a6ff;font-weight:bold}
+.metric .label{font-size:11px;color:#8b949e}
+.note{font-size:12px;color:#8b949e;margin-top:8px}
+.tag{background:#238636;color:#fff;padding:2px 8px;border-radius:12px;font-size:11px;margin:2px}
+.tag.red{background:#da3633}
+.tag.blue{background:#1f6feb}
+.footer{margin-top:40px;padding-top:16px;border-top:1px solid #30363d;font-size:12px;color:#8b949e}
+a{color:#58a6ff;text-decoration:none}
+</style></head><body>
+<h1>TCM-FormulaBench v1 · 中醫方劑層公共基準</h1>
+<p>一把不會被「加甘草」騙過的中醫方劑評測尺。</p>
+
+<div class="card">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-around">
+<div class="metric"><div class="val">264</div><div class="label">註冊表方劑</div></div>
+<div class="metric"><div class="val">200</div><div class="label">基準題數</div></div>
+<div class="metric"><div class="val">100%</div><div class="label">文本仲裁</div></div>
+<div class="metric"><div class="val">3</div><div class="label">評分口徑</div></div>
+</div>
+</div>
+
+<h2>🏆 模型排行榜（方劑層）</h2>
+<table>
+<tr><th>模型/系統</th><th>Base(方劑嚴格)</th><th>Audit-L1(積極)</th><th>Audit-L2(保守)</th><th>Herb-Recall</th><th>日期</th></tr>
+<tr><td>GLM-4-Flash</td><td>0.20</td><td class="best">0.60</td><td>0.40</td><td>0.53</td><td>2026-10-23</td></tr>
+<tr><td>純形式檢索</td><td>0.215</td><td>—</td><td>—</td><td>—</td><td>2026-10-23</td></tr>
+<tr><td>Gemini-2.5-pro</td><td>0.40</td><td>—</td><td>—</td><td>—</td><td>2026-10-23</td></tr>
+<tr><td colspan="6"><span class="tag red">作廢</span> 舊 SymMap 基準 (0.41→1.00，甘草萬能匹配 artifact)</td></tr>
+</table>
+
+<h2>📊 數據集排行榜</h2>
+<table>
+<tr><th>數據集</th><th>規模</th><th>方名垃圾率</th><th>重複率</th><th>可回溯</th><th>等級</th></tr>
+<tr><td>神農候選集</td><td>57,970</td><td>16%</td><td>99%</td><td>0 條</td><td><span class="tag red">C</span></td></tr>
+<tr><td>TCM_Ground_Truth_QA</td><td>84,339</td><td>—</td><td>—</td><td>1,318 提及方劑</td><td><span class="tag blue">B-潛力</span></td></tr>
+<tr><td>凍結語料 v3-user</td><td>101 方/289 詞</td><td>0%</td><td>0%</td><td>100%</td><td><span class="tag">A-凍結</span></td></tr>
+</table>
+
+<h2>🦋 食藥同源專項基準 (ShiYao-Bench v1)</h2>
+<table>
+<tr><th>模型</th><th>Base</th><th>Audit-L1</th><th>Audit-L2</th><th>目錄合規</th><th>禁忌識別</th><th>藥證對應</th></tr>
+<tr><td>GLM-4-Flash</td><td>0.437</td><td>0.437</td><td>0.437</td><td>0.51</td><td class="best">0.35</td><td>0.45</td></tr>
+</table>
+<div class="note">禁忌識別 0.35 低於三選一隨機基線(0.33)——模型系統性把風險答成妊娠禁忌，保守偏置嚴重。規則引擎價值的反向證明。</div>
+
+<h2>📖 評測協議</h2>
+<div class="card">
+<p><strong>三口徑</strong>：</p>
+<p><span class="tag">Base</span> 方名嚴格匹配（無歸位、無變體）</p>
+<p><span class="tag">Audit-L1</span> 積極證型歸位（逍遙散類→經方對應證）</p>
+<p><span class="tag">Audit-L2</span> 保守變體歸一（杞菊地黃丸⊇六味地黃丸才歸位）</p>
+<p class="note">反作弊條款：命中函數不得含萬能匹配；提交者須公開命中函數代碼；全零/全滿分觸發復算。</p>
+</div>
+
+<h2>📁 發布包</h2>
+<div class="card">
+<p>📦 bench_v1/ — 完整基準包</p>
+<p>├ shanghan_v3_registry.csv（傷寒 101 方註冊表）</p>
+<p>├ jinkui_registry.csv（金匱 163 方註冊表）</p>
+<p>├ wenbing_registry.csv（溫病 195 候選）</p>
+<p>├ v22_benchmark_rebuilt.csv（200 題誠實基準）</p>
+<p>├ v23_audit_side.csv（審計側結果）</p>
+<p>├ shiyao_bench_v1.csv（食藥同源 60 題）</p>
+<p>├ leaderboard_shiyao.csv（食藥同源榜）</p>
+<p>└ PROTOCOL.md（評測協議）</p>
+</div>
+
+<h2>⚠️ 已知陷阱（給後來者）</h2>
+<div class="card">
+<p>• 舊 SymMap 基準因「甘草萬能匹配」作廢（v12 復算：200/200 全由追加甘草產生）；</p>
+<p>• 詞彙鴻溝：現代症狀詞↔古典術語，形式層直配上限 21.5%，必須 LLM 提名+形式審計；</p>
+<p>• 版本差異：宋本 398 條編號為通行本系統；溫熱論存在「宜/可」類異文。</p>
+</div>
+
+<div class="footer">
+<p>HoloTSH 項目 · 語料為公版數字化本 · 基準與審計由 HoloTSH 構建</p>
+<p>使用本基準須遵守反作弊條款並公開命中函數。引用待論文 P7/R 系列定稿後更新。</p>
+<p><a href="https://github.com/shennong-ai/HoloTSH">GitHub</a> | 復算：run_v22/v23/shiyao_bench</p>
+</div>
+</body></html>
